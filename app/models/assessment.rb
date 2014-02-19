@@ -1,3 +1,5 @@
 class Assessment < ActiveRecord::Base
-  # attr_accessible :title, :body
+    belongs_to :course
+    has_many :questions
+    belongs_to :course_module
 end

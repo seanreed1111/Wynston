@@ -1,3 +1,5 @@
 class Professor < User
-  # attr_accessible :title, :body
+    belongs_to :institution
+    has_many :courses
+
 end
