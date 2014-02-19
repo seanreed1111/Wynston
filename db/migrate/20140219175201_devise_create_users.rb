@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :image_url
       t.string :password_digest
       t.string :about_me
-      t.string :user_flag
+      t.string :type
       t.string :course_register
       t.string :phone
       t.string :institution
