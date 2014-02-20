@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  attr_accessible :picture, :remote_picture_url
+	mount_uploader :picture, PictureUploader
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
