@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>Courses</h1>
+</div>
+
+<% @courses.each do |course| %>
+<div class="course">
+  <strong><%=course.title %></strong>
+  <p><%= course.description %></p>
+ 
+</div>
+
+<% end %>
