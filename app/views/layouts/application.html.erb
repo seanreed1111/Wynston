@@ -3,13 +3,10 @@
 <head>
   <title>Wynston</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "public/css/bootstrap", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "public/js/bootstrap" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
       <div class = "flash_msg">
         <h3><%flash.each do |key, value| %>
         <%= value %>
