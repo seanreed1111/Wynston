@@ -11,48 +11,104 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :about_me %><br>
-    <%= f.text_area :about_me %>
-  </div>
-  <div class="field">
-    <%= f.label :education %><br>
-    <%= f.select :education, ['High School', 'Associate', 'Bachelor', 'Master', 'Ph.D.', 'JD', 'MD'] %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, ['', 'Female', 'Male'] %>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.date_select :birthday ,:start_year => 1920, :end_year => 2014 %>
-  </div>
-  <div class="field">
-    <%= f.label :picture %><br>
-    <%= image_tag current_user.picture %><br><br>
-    <%= f.file_field :picture %>
-  </div>
-  <div class="field">
-    <%= f.label :remote_picture_url, "or image URL" %><br />
-    <%= f.text_field :remote_picture_url %>
-  </div>
+
+</div>
+
+<div id="notice">
+
+  <div class="row1">
+    <div class="profile_picture_details">
+      <p>
+        <h2><strong><%= current_user.first_name %></strong></h2>
+      </p>
+      <div class="field">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </div>
+      <p class="picture_picture">
+        <% if current_user.picture.nil? %>
+          <img src="<%= asset_path( 'no_pic.jpg' ) %>">
+        <% else %>
+          <%= image_tag current_user.picture %>
+        <% end %>
+      </p>
+      <div class="field">
+        <%= f.label :picture %><br>
+        <%= f.file_field :picture %>
+      </div>
+      <div class="field">
+        <%= f.label :remote_picture_url, "or image URL" %><br />
+        <%= f.text_field :remote_picture_url %>
+      </div>
+        <p>
+          <strong>Gender:</strong>
+          <%= current_user.gender %>
+          <div class="field">
+            <%= f.label :gender %><br>
+            <%= f.select :gender, ['', 'Female', 'Male'] %>
+          </div>
+        </p>
+        <p>
+          <strong>Birthday:</strong>
+          <%= current_user.birthday %>
+        </p>
+        <div class="field">
+          <%= f.label :birthday %><br>
+          <%= f.date_select :birthday ,:start_year => 1920, :end_year => 2014 %>
+        </div>
+        <p>
+          <strong>Phone Number:</strong>
+          <%= current_user.phone %>
+        </p>
+        <div class="field">
+          <%= f.label :phone %><br>
+          <%= f.text_field :phone %>
+        </div>
+      </p>
+    </div>
+
+    <div class="about_you" id="about_you">
+      <p>
+        <h2><strong>
+        <div class="field">
+          <%= f.label :about_me %>
+        </strong></h2>
+          <%= f.text_area :about_me %>
+        </div>
+        <br>
+        <div class="field">
+          <%= f.label :education %><br>
+          <%= f.select :education, ['High School', 'Associate', 'Bachelor', 'Master', 'Ph.D.', 'JD', 'MD'] %>
+        </div>
+        <div class="field">
+          <%= f.label :location %><br>
+          <%= f.text_field :location %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>
+      </p>
+    </div>
+
+    <div class="skills">
+<!--         We can develop the skills portion later -->
+
+
+
+    </div>
+
+  </div>  
+</div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<br><br>
