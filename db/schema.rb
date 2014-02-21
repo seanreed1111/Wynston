@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20140220165846) do
-  image_upload
 
   create_table "answers", :force => true do |t|
     t.integer  "choice_id"

@@ -1,43 +1,64 @@
+<%= notice %>
 
-  <h1>Listing Users</h1>
+<br>
 
-  <table>
-    <thead>
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Description</th>
-        <th>Picture</th>
-        <th>Phone number</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+  <% @users.each do |user| %>
 
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= user.about_me %></td>
-          <td><%= user.picture %></td>
-          <td><%= user.phone %></td>
-          <td><%= link_to 'Show', user %></td>
+<div class="profile_header">
+<h1>Profile</h1>
 
-          <% if user_signed_in? %>
+    <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_user_path(user) %>
 
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>   
+</div>
 
-          <% end %>         
+<div id="notice">
 
-        </tr>
-      <% end %>
-      
-    </tbody>
-  </table>
+  <div class="row1">
+    <div class="profile_picture">
+      <p>
+        <h2><strong>First Name:</strong></h2>
+        <%= user.first_name %>
+      </p>
+      <p>
+        <% if user.picture.nil? %>
+          <img src="<%= asset_path( 'no_pic.jpg' ) %>">
+        <% else %>
+          <%= user.picture %>
+          <img src=<% user.picture %>>
+
+        <% end %>
+      </p>
+    </div>
+
+    <div class="about_you">
+      <p>
+        <h2><strong>About you</strong></h2>
+        <p><%= user.about_me %></p><br><br>
+        <p>
+<!--           Other elements needed: Education/ Location/ Gender/ Birthday -->
+
+          <strong>Email:</strong>
+          <%= user.email %>
+        </p>
+        <p>
+          <strong>Phone Number:</strong>
+          <%= user.phone %>
+        </p>
+      </p>
+    </div>
+
+    <div class="skills">
+<!--         We can develop the skills portion later -->
+    </div>
+
+  </div>  
 
   <br>
 
   <%= link_to 'New User', new_user_path %>
+
+</div>
+
+  <% end %> 
