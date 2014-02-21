@@ -1,16 +1,17 @@
+
 <%= notice %>
 
-<br>
+<% if user_signed_in? %>
 
-  <% @users.each do |user| %>
+<br>
 
 <div class="profile_header">
 <h1>Profile</h1>
 
-    <% if user_signed_in? %>
-    <%= link_to 'Edit', edit_user_path(user) %>
 
-    <% end %>   
+    <%= link_to 'Edit', edit_user_path(current_user) %>
+
+  
 </div>
 
 <div id="notice">
@@ -19,14 +20,13 @@
     <div class="profile_picture">
       <p>
         <h2><strong>First Name:</strong></h2>
-        <%= user.first_name %>
+        <%= current_user.first_name %>
       </p>
       <p>
-        <% if user.picture.nil? %>
+        <% if current_user.picture.nil? %>
           <img src="<%= asset_path( 'no_pic.jpg' ) %>">
         <% else %>
-          <%= user.picture %>
-          <img src=<% user.picture %>>
+          <%= image_tag current_user.picture %>
 
         <% end %>
       </p>
@@ -35,16 +35,16 @@
     <div class="about_you">
       <p>
         <h2><strong>About you</strong></h2>
-        <p><%= user.about_me %></p><br><br>
+        <p><%= current_user.about_me %></p><br><br>
         <p>
 <!--           Other elements needed: Education/ Location/ Gender/ Birthday -->
 
           <strong>Email:</strong>
-          <%= user.email %>
+          <%= current_user.email %>
         </p>
         <p>
           <strong>Phone Number:</strong>
-          <%= user.phone %>
+          <%= current_user.phone %>
         </p>
       </p>
     </div>
@@ -54,11 +54,7 @@
     </div>
 
   </div>  
-
-  <br>
-
-  <%= link_to 'New User', new_user_path %>
-
 </div>
-
-  <% end %> 
+<% else %>
+  <meta http-equiv="refresh" content="10; URL=../home">
+<% end %> 
