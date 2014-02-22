@@ -4,17 +4,26 @@
   <h1>Courses</h1>
 </div>
 
+<table class="table">
 <% @courses.each do |course| %>
-<div class="course">
-  <strong><%=course.title %></strong>
-  <p><%= course.description %></p>
- 
-</div>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
+<td>
+	<%= image_tag(course.image_url) %>
+</td>
+
+<td class="course_info">
+	<dl>
+		<dt><%= course.title %></dt>
+  	<dt><%= course.description %></dt>
+  </dl>
+ </td>
+</tr>
 <% end %>
 
+</table>
+
 <div class="row">
-	
 	<div class="col-md-4">
 		<h3>Socialize</h3>
 		<p>

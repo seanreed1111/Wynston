@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-	attr_accessible :title, :description, :intro_video, :syllabus, :language, :hours, :prerequisites, :start_date, :end_date, :image_url
+	attr_accessible :title, :description, :intro_video, :syllabus, :language, :hours, :prerequisites, :start_date, :end_date, :image_url, :professor_id 
 	
 	has_many :assessments
 	has_many :professors
