@@ -46,7 +46,6 @@
       </div>
         <p>
           <strong>Gender:</strong>
-          <%= current_user.gender %>
           <div class="field">
             <%= f.label :gender %><br>
             <%= f.select :gender, ['', 'Female', 'Male'] %>
@@ -58,7 +57,7 @@
         </p>
         <div class="field">
           <%= f.label :birthday %><br>
-          <%= f.date_select :birthday ,:start_year => 1920, :end_year => 2014 %>
+          <%= f.date_select :birthday ,:start_year => (@bdayToday.year - 114), :end_year => @bdayToday.year %>
         </div>
         <p>
           <strong>Phone Number:</strong>
