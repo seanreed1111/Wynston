@@ -1,36 +1,53 @@
-<img src="#">
-<p>Beta</p>
 <div class="page-header">
+	<img src="#">
+	<p>Beta</p>
   <h1>Courses</h1>
 </div>
-
-<% @courses.each do |course| %>
-<div class="course">
-  <strong><%=course.title %></strong>
-  <p><%= course.description %></p>
- 
-</div>
-
-<% end %>
-
 <div class="row">
-	
-	<div class="col-md-4">
+	<div class="col-xs-12 col-md-8">
+		<table class="table">
+		<% @courses.each do |course| %>
+		<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+		<td>
+			<%= image_tag(course.image_url) %>
+		</td>
+
+		<td class="course_info">
+			<dl>
+				<dt><%= course.title %></dt>
+		  	<dt><%= course.description %></dt>
+		  </dl>
+		 </td>
+		</tr>
+		<% end %>
+		</table>
+	</div>
+	<div class="col-xs-6 col-md-4">
 		<h3>Socialize</h3>
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis metus ut placerat sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-	</p>
-	</div>
-	<div class="col-md-4">
+		</p>
+		<img src="#">
+		<img src="#">
+		<img src="#">
+		<img src="#">
+
 		<h3>Get Started</h3>
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis metus ut placerat sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-	</p>
-	</div>
-	<div class="col-md-4">
+		</p>
+	
 		<h3>Follow Our Blog</h3>
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis metus ut placerat sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-	</p>
+		</p>
+		<h3>Blog Excerpts</h3>
+		<ul>
+			<li>Education for the Future</li>
+			<li>Building and Shipping Products</li>
+			<li>Career Management In NYC</li>
+		</ul>
+
 	</div>
-</div> 
+</div>
