@@ -13,4 +13,11 @@ class User < ActiveRecord::Base
                     :about_me,:type,:course_register,:phone,:institution, 
                     :location, :gender, :birthday, :education
 
+  def roles=(role)
+    self.type = role
+  end
+
+  def roles
+    self.type
+  end
 end

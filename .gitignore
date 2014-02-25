@@ -17,6 +17,15 @@
 # Ignore credentials
 /config/application.yml
 
+#Ignore Video files
+*.mov
+*.mp4
+*.mpg
+*.mpeg
+*.m4v
+
+
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp

@@ -45,8 +45,10 @@
 
 # 5.times {Lecture.create(note: Faker::Lorem.paragraphs)}
 
-Choice.create(answer: "New York City", correct: false )
-Choice.create(answer: "Marboro", correct: false )
-Choice.create(answer: "North Dakota?", correct: false)
-Choice.create(answer: "Providence", correct: true )
-Choice.create(answer: "Boise", correct: true)
+# Choice.create(answer: "New York City", correct: false )
+# Choice.create(answer: "Marboro", correct: false )
+# Choice.create(answer: "North Dakota?", correct: false)
+# Choice.create(answer: "Providence", correct: true )
+# Choice.create(answer: "Boise", correct: true)
+
+Sysadmin.create(first_name: "Flatiron", email: "flatiron@flatiron.com", password: "flatiron")
