@@ -2,6 +2,9 @@ Wynston::Application.routes.draw do
 
   devise_for :users
   resources :courses
+  resources :users
+  get "static_pages/home"
+  get "static_pages/about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -9,6 +12,10 @@ Wynston::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
    root :to => 'static_pages#home'
+
+  # For Teach on Wynston page
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

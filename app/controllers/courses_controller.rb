@@ -22,4 +22,16 @@ class CoursesController < ApplicationController
 		@videopath = @course.video.path.match(/\/system(.*)/)
 	end
 
+	def show
+		@course = Course.find(params[:id])
+	end 
+
+	def new 
+		@course = Course.new 
+	end 
+
+	def edit
+		@course = Course.find(params[:id])
+	end 
+
 end

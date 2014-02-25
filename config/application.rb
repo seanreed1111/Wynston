@@ -61,5 +61,31 @@ module Wynston
 
     #suggested by gem devise
     config.assets.initialize_on_precompile = false
+
+    # LOAD DEVELOPMENT ENVIRONMENT VARIABLES
+    if Rails.env.development?
+      ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+    end
+
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "localhost:3000",
+      :user_name            => ENV["WYNSTON_USERNAME"],
+      :password             => ENV["WYNSTON_PASSWORD"],
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "localhost:3000"
+    }
+
+
+
+
+
   end
 end
