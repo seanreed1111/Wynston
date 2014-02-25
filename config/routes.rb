@@ -13,6 +13,10 @@ Wynston::Application.routes.draw do
   # just remember to delete public/index.html.
    root :to => 'static_pages#home'
 
+  # For Teach on Wynston page
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
