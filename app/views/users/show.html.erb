@@ -1,71 +1,29 @@
-<%= notice %>
+<p id="notice"><%= notice %></p>
 
-<% if user_signed_in? %>
+  <p>
+    <strong>First Name:</strong>
+    <%= @user.first_name %>
+  </p>
 
-<br>
+  <p>
+    <strong>Last Name:</strong>
+    <%= @user.last_name %>
+  </p>
 
-<div class="profile_header">
-<h1>Profile</h1>
+  <p>
+    <strong>Description:</strong>
+    <%= @user.about_me %>
+  </p>
 
-    <%= link_to 'Edit', edit_user_path(current_user) %>
+  <p>
+    <strong>Phone Number:</strong>
+    <%= @user.phone %>
+  </p>
 
-  
-</div>
+  <p>
+    <strong>Picture:</strong>
+    <%= image_tag(@user.picture_url, :width => 600) if @user.picture.present? %>
+  </p>
 
-<div id="notice">
-
-  <div class="row1">
-    <div class="profile_picture_details">
-      <p>
-        <h2><strong><%= current_user.first_name %></strong></h2>
-      </p>
-      <p class="picture_picture">
-        <% if current_user.picture.nil? %>
-          <img src="<%= asset_path( 'no_pic.jpg' ) %>">
-        <% else %>
-          <%= image_tag current_user.picture %>
-
-        <% end %>
-      </p>
-    </div>
-
-    <div class="about_you">
-      <p>
-        <h2><strong>About you</strong></h2>
-        <p><%= current_user.about_me %></p><br><br>
-        <p>
-        <p>
-          <strong>Education:</strong>
-          <%= current_user.education %>
-        </p>
-        <p>
-          <strong>Location:</strong>
-          <%= current_user.location %>
-        </p>
-        <p>
-          <strong>Gender:</strong>
-          <%= current_user.gender %>
-        </p>
-        <p>
-          <strong>Birthday:</strong>
-          <%= current_user.birthday %>
-        </p>
-          <strong>Email:</strong>
-          <%= current_user.email %>
-        </p>
-        <p>
-          <strong>Phone Number:</strong>
-          <%= current_user.phone %>
-        </p>
-      </p>
-    </div>
-
-    <div class="skills">
-<!--         We can develop the skills portion later -->
-    </div>
-
-  </div>  
-</div>
-<% else %>
-  <meta http-equiv="refresh" content="10; URL=../home">
-<% end %> 
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

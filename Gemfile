@@ -8,6 +8,8 @@ gem 'rails', '3.2.16'
 
 gem 'devise' 
 gem 'haml'
+gem 'paperclip'
+gem 'debugger'
 gem 'cancan'
 gem 'omniauth'
 
