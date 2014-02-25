@@ -1,0 +1,10 @@
+%h1 
+  Yolo! Amine Rocks!
+
+%p
+  %b Video:
+  = @course.video.path.match(/\/system(.*)/)
+
+
+%video{controls: "",height: "250",width: "320", src: "#{@course.video.path.match(/\/system(.*)/)}"}
+
