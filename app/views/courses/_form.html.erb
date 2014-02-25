@@ -21,7 +21,31 @@
     <%= f.label :hours %><br/>
     <%= f.text_field :hours %>
   </div>
+
+
+
+  <%= f.fields_for :choices do |ff| %>
+
+    <div class="field">
+      <%= ff.label "Choice for the question:" %><br/>
+      <%= ff.text_field :answer %>
+    </div>
+
+  <% end %>
+
+
+
+
+
+
+<!-- I've begun adding other parts of the create course to this single page till we can split it up.  Perhaps we can divide it up with angular. - Jeremy  -->
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+

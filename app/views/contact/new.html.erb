@@ -1,6 +1,4 @@
 <p><%= form_for @message, :url => contact_path do |form| %>
-  <fieldset class="fields">
-
   <h1>Teach on Wynston</h1>
 
   <h2>Reach thousands of learners</h2>
@@ -8,9 +6,10 @@
 
   <h2>Get support with instructional design</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar tortor a lorem iaculis condimentum. Nullam sed volutpat ante. Curabitur accumsan mollis nisi vel vulputate. Mauris id facilisis ipsum, ut euismod nunc. Aenean quis condimentum orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sed mi magna.</p>
-
+  <hr>
   <h2>Nominate a professor</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar tortor a lorem iaculis condimentum. Nullam sed volutpat ante. </p>
+  <fieldset class="fields">
   <div class="contact">
     <div class="field">
       <%= form.label "First Name" %>
@@ -25,7 +24,7 @@
       <%= form.text_field :nomCollege %>
     </div>  
   </div>
-  <br><br><br>
+  <br><br><br><br><br><br>
   <p><h2>Get in touch with us to teach a course</h2></p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar tortor a lorem iaculis condimentum. Nullam sed volutpat ante. </p>
   <div class="contact">

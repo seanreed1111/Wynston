@@ -5,4 +5,10 @@ class Course < ActiveRecord::Base
 	has_many :professors
 	has_many :enrollments
 
+	# accepts_nested_attributes_for :course_modules
+	accepts_nested_attributes_for :assessments
+	accepts_nested_attributes_for :lectures
+	accepts_nested_attributes_for :questions
+	accepts_nested_attributes_for :choices 
+
 end
