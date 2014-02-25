@@ -1,3 +1,5 @@
+require 'time'
+
 class UsersController < ApplicationController
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -18,6 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @bdayToday = Time.new  #for the year range in Birthdays 
     @user = User.find(params[:id])
   end
 

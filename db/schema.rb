@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20140220165846) do
-  image_upload
+ActiveRecord::Schema.define(:version => 20140221211659) do
 
   create_table "answers", :force => true do |t|
     t.integer  "choice_id"
@@ -126,6 +124,11 @@ ActiveRecord::Schema.define(:version => 20140220165846) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "picture"
+    t.string   "role"
+    t.string   "education"
+    t.string   "gender"
+    t.string   "location"
+    t.date     "birthday"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

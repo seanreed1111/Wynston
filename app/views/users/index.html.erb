@@ -1,43 +1,75 @@
 
-  <h1>Listing Users</h1>
+<%= notice %>
 
-  <table>
-    <thead>
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Description</th>
-        <th>Picture</th>
-        <th>Phone number</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+<% if user_signed_in? %>
 
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= user.about_me %></td>
-          <td><%= user.picture %></td>
-          <td><%= user.phone %></td>
-          <td><%= link_to 'Show', user %></td>
+<br>
 
-          <% if user_signed_in? %>
+<div class="profile_header">
+<h1>Profile</h1>
 
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-          <% end %>         
+    <%= link_to 'Edit', edit_user_path(current_user) %>
 
-        </tr>
-      <% end %>
-      
-    </tbody>
-  </table>
+  
+</div>
 
-  <br>
+<div id="notice">
 
-  <%= link_to 'New User', new_user_path %>
+  <div class="row1">
+    <div class="profile_picture_details">
+      <p>
+        <h2><strong><%= current_user.first_name %></strong></h2>
+      </p>
+      <p class="picture_picture">
+        <% if current_user.picture.nil? %>
+          <img src="<%= asset_path( 'no_pic.jpg' ) %>">
+        <% else %>
+          <%= image_tag current_user.picture %>
+
+        <% end %>
+      </p>
+    </div>
+
+    <div class="about_you">
+      <p>
+        <h2><strong>About you</strong></h2>
+        <p><%= current_user.about_me %></p><br><br>
+        <p>
+<!--           Other elements needed: Education/ Location/ Gender/ Birthday -->
+
+        <p>
+          <strong>Education:</strong>
+          <%= current_user.education %>
+        </p>
+        <p>
+          <strong>Location:</strong>
+          <%= current_user.location %>
+        </p>
+        <p>
+          <strong>Gender:</strong>
+          <%= current_user.gender %>
+        </p>
+        <p>
+          <strong>Birthday:</strong>
+          <%= current_user.birthday %>
+        </p>
+          <strong>Email:</strong>
+          <%= current_user.email %>
+        </p>
+        <p>
+          <strong>Phone Number:</strong>
+          <%= current_user.phone %>
+        </p>
+      </p>
+    </div>
+
+    <div class="skills">
+<!--         We can develop the skills portion later -->
+    </div>
+
+  </div>  
+</div>
+<% else %>
+  <meta http-equiv="refresh" content="10; URL=../home">
+<% end %> 
