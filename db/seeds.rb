@@ -18,13 +18,7 @@
 #   Country.create( name: name, population: population )
 # end
 
-#Accessibles from class Course
-# class Course < ActiveRecord::Base
-#   attr_accessible :title, :description, :intro_video, :syllabus, 
-#   :language, :hours, :prerequisites, :start_date, 
-#   :end_date, :image_url, :professor_id 
 
-#seed title, description, prerequisites
 # course_list = [
 #   ["Intro to Travel, Tourism & Hospitality Management", "Introduction to the world of Travel and Tourism", "None"],
 #   ["Business Statistics I: MAT 120", "Statistical concepts that ever entrepreneur needs to know.", "Precalculus or MAT 200"],
@@ -39,5 +33,18 @@
 #   Course.create(title: title, description: description, prerequisites: prerequisites)
 # end
 
+# 5.times {Professor.create(first_name: Faker::Name.first_name, 
+#                           last_name: Faker::Name.last_name, 
+#                           email: Faker::Internet.email, 
+#                           password: "12345678") 
+# }
 
-User.create(first_name: "first_name")
+# 5.times {Student.create(first_name: Faker::Name.first_name, 
+#                           last_name: Faker::Name.last_name, 
+#                           email: Faker::Internet.email, 
+#                           password: "12345678") 
+# }
+
+
+# 5.times {Institution.create(name: Faker::Company.name + " University")}
+
