@@ -7,6 +7,9 @@
       <%= builder.text_area :question_text, :rows => 3 %><br />
       <%= builder.hidden_field :_destroy %>
       <%= link_to_function "remove", "remove_fields(this)" %>
+      <%= f.fields_for :choices do |builder| %>
+      <%= render 'choice_fields', :f => builder %>
+  <% end %>
     </p>
   <% end %>
 
