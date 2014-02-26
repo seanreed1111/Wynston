@@ -22,10 +22,13 @@
     <%= f.text_field :hours %>
   </div>
 
-  <%= f.fields_for :assessments do |builder| %>
+  <%= f.fields_for :questions do |builder| %>
     <%= render "question_fields", :f => builder %>
   <% end %>
 
+  <%= f.fields_for :choices do |builder| %>
+    <%= render 'choice_fields', :f => builder %>
+  <% end %>
 
 
   <div class="actions">

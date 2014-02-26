@@ -1,30 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#also, note that this is a ruby file, so you can also do the following:
-# #country_list = [
-#   [ "Germany", 81831000 ],
-#   [ "France", 65447374 ],
-#   [ "Belgium", 10839905 ],
-#   [ "Netherlands", 16680000 ]
-# ]
-
-# country_list.each do |name, population|
-#   Country.create( name: name, population: population )
-# end
-
-#Accessibles from class Course
-# class Course < ActiveRecord::Base
-#   attr_accessible :title, :description, :intro_video, :syllabus, 
-#   :language, :hours, :prerequisites, :start_date, 
-#   :end_date, :image_url, :professor_id 
-
-#seed title, description, prerequisites
 course_list = [
   ["Intro to Travel, Tourism & Hospitality Management", "Introduction to the world of Travel and Tourism", "None"],
   ["Business Statistics I: MAT 120", "Statistical concepts that ever entrepreneur needs to know.", "Precalculus or MAT 200"],
@@ -38,3 +14,45 @@ course_list = [
 course_list.each do |title, description, prerequisites|
   Course.create(title: title, description: description, prerequisites: prerequisites)
 end
+
+5.times {Professor.create(first_name: Faker::Name.first_name, 
+                          last_name: Faker::Name.last_name, 
+                          email: Faker::Internet.email, 
+                          password: "12345678") 
+}
+
+5.times {Student.create(first_name: Faker::Name.first_name, 
+                          last_name: Faker::Name.last_name, 
+                          email: Faker::Internet.email, 
+                          password: "12345678") 
+}
+
+
+# 5.times {Institution.create(name: Faker::Company.name + " University")}
+5.times do |n| 
+  CourseModule.create(title: "Module #{n}")
+end
+
+5.times do |n|
+  Assessment.create(grade: n*16)
+end
+
+5.times {Lecture.create(note: Faker::Lorem.paragraphs)}
+
+Question.create(question_text: "What is the capital of Pennsylvania?" )
+Question.create(question_text: "What is the capital of North Dakota" )
+Question.create(question_text: "What is the capital of South Dakota?" )
+Question.create(question_text: "What is the capital of Rhode Island?" )
+Question.create(question_text: "What is the capital of Idaho?" )
+
+Choice.create(answer: "New York City", correct: false )
+Choice.create(answer: "Marboro", correct: false )
+Choice.create(answer: "North Dakota?", correct: false)
+Choice.create(answer: "Providence", correct: true )
+Choice.create(answer: "Boise", correct: true)
+
+
+# Sysadmin.create(first_name: "Sysadmin", email: "sysadmin@sysadmin.com", password: "12345678")
+Student.create(first_name: "Student", email: "student@student.com", password: "12345678" )
+Professor.create(first_name: "Professor", email: "professor@professor.com", password:"12345678")
+

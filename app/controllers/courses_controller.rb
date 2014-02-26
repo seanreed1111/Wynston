@@ -10,10 +10,12 @@ class CoursesController < ApplicationController
 	end 
 
 	def new 
-		@course = Course.new 
-		1.times do
-			question = @course.assessments.build
-			4.times { question.choices.buld}
+		@course = Course.new
+		# question = Question.new
+
+		3.times do
+			assessments = @course.assessments.build
+		 	4.times { assessments.questions.build }
 		end
 	end 
 
