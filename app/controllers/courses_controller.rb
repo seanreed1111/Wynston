@@ -4,6 +4,10 @@ class CoursesController < ApplicationController
 		@courses = Course.all
 	end 
 
+	def show
+		@course = Course.find(params[:id])
+	end 
+
   def create
   @course = Course.new(params[:course])
 
@@ -18,13 +22,11 @@ class CoursesController < ApplicationController
 	  end
 	end
 
-	def video_path
-		@videopath = @course.video.path.match(/\/system(.*)/)
-	end
+	# def video_path
+	# 	@videopath = @course.video.path.match(/\/system(.*)/)
+	# end
 
-	def show
-		@course = Course.find(params[:id])
-	end 
+
 
 	def new 
 		@course = Course.new 

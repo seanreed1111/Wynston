@@ -2,9 +2,34 @@
   Yolo! Amine Rocks!
 
 %p
-  %b Video:
-  = @course.video.path.match(/\/system(.*)/)
+  %b 
+  =  if !@course.video.path.nil?
+    Video:
+    = @course.video.path.match(/\/system(.*)/) 
+    %video{controls: "",height: "250",width: "320", src: "#{@course.video.path.match(/\/system(.*)/)}"} 
+
+%p
+  %b
+  = "#{@course.title}"
+
+%p
+  %b
+  = "#{@course.description}"
+
+%p
+  %b
+  = "#{@course.language}"
+
+%p
+  %b
+  = "#{@course.hours}"
 
 
-%video{controls: "",height: "250",width: "320", src: "#{@course.video.path.match(/\/system(.*)/)}"}
+%p
+  %b
+  = "#{@course.syllabus}"
 
+
+%p
+  %b
+  = "#{@course.prerequisites}"
