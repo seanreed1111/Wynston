@@ -1,0 +1,16 @@
+<!-- Update fields to reflect the wireframe -->
+<%= form_for (@assessment) do |f| %>
+  
+  <%= f.fields_for :questions do |builder| %>
+    <p class = "field">
+      <%= builder.label :question_text, "Question" %><br />
+      <%= builder.text_area :question_text, :rows => 3 %><br />
+      <%= builder.hidden_field :_destroy %>
+      <%= link_to_function "remove", "remove_fields(this)" %>
+    </p>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

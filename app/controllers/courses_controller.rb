@@ -13,10 +13,12 @@ class CoursesController < ApplicationController
 		@course = Course.new
 		# question = Question.new
 
-		3.times do
+		# 3.times do
+		debugger
 			assessments = @course.assessments.build
 		 	4.times { assessments.questions.build }
-		end
+
+		# end
 	end 
 
 	def edit

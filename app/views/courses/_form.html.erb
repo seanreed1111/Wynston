@@ -23,7 +23,12 @@
   </div>
 
   <%= f.fields_for :questions do |builder| %>
-    <%= render "question_fields", :f => builder %>
+    <p class = "field">
+      <%= builder.label :question_text, "Question" %><br />
+      <%= builder.text_area :question_text, :rows => 3 %><br />
+      <%= builder.hidden_field :_destroy %>
+      <%= link_to_function "remove", "remove_fields(this)" %>
+    </p>
   <% end %>
 
   <%= f.fields_for :choices do |builder| %>
