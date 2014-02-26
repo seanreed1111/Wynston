@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140221211659) do
+ActiveRecord::Schema.define(:version => 20140224225058) do
 
   create_table "answers", :force => true do |t|
     t.integer  "choice_id"
@@ -62,8 +62,12 @@ ActiveRecord::Schema.define(:version => 20140221211659) do
     t.date     "end_date"
     t.string   "image_url"
     t.integer  "professor_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
   end
 
   create_table "enrollments", :force => true do |t|

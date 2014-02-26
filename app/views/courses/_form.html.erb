@@ -1,13 +1,12 @@
 <!-- Update fields to reflect the wireframe -->
-<%= form_for (@course) do |f| %>
-  
+<%= form_for (@course), :html => { :multipart => true }  do |f| %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :intro_video %><br />
-    <%= f.text_field :intro_video %>
+    <%= f.file_field :video %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
