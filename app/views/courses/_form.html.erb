@@ -21,6 +21,13 @@
     <%= f.label :hours %><br/>
     <%= f.text_field :hours %>
   </div>
+
+  <%= f.fields_for :assessments do |builder| %>
+    <%= render "question_fields", :f => builder %>
+  <% end %>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
