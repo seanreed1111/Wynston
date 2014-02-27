@@ -21,9 +21,9 @@ class AssessmentsController < ApplicationController
 	end
 
 	def create
-  	@assessment = Assessment.new(params[:questions])
-  	
+  	@assessment = Assessment.new(params[:assessment])
 
+	  respond_to do |format|
 		    if @assessment.save
 		      format.html { redirect_to @assessment, notice: 'Assessment was successfully created.' }
 		      format.json { render json: @assessment, status: :created, location: @assessment }
@@ -31,7 +31,7 @@ class AssessmentsController < ApplicationController
 		      format.html { render action: "new" }
 		      format.json { render json: @assessment.errors, status: :unprocessable_entity }
 		    end
-
+	  end
 	end
 
 	# def video_path
