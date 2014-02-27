@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20140224225058) do
-=======
 ActiveRecord::Schema.define(:version => 20140226183416) do
->>>>>>> course_guide
 
   create_table "answers", :force => true do |t|
     t.integer  "choice_id"
@@ -73,10 +69,7 @@ ActiveRecord::Schema.define(:version => 20140226183416) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
-<<<<<<< HEAD
-=======
     t.integer  "course_id"
->>>>>>> course_guide
   end
 
   create_table "enrollments", :force => true do |t|
