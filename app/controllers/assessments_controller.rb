@@ -5,13 +5,15 @@ class AssessmentsController < ApplicationController
 		3.times do
 		assessments	= @assessment.questions.build
 			4.times{assessments.choices.build}
+	
+		end 
 			
-		end
 	end
 
-	def create
+
+	# def create
 		# debugger
 		# Choices.new(params[:questions][:choices])
 
-	end
-end
+	# end
+end 
