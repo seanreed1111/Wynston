@@ -1,0 +1,25 @@
+  <h2><%= link_to 'New Assessment', new_assessment_path %></h2>
+
+<%= @assessments.each do | lesson | %>
+<table>
+  <tr>
+    <th>Assessment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+<table>
+	<tr>
+		<td><%= lesson.id %></td>
+    <td><%= lesson.questions.inspect %></td>
+      <td>Choices</td>
+      <%= lesson.questions.each do | question | %>
+          <td><%= lesson.inspect %></td>
+      <% end %>
+    <td><%= link_to 'Show', lesson %></td>
+    <td><%= link_to 'Edit', edit_assessment_path(lesson) %></td>
+    <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+</table>
+<% end %>

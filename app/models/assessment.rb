@@ -7,7 +7,7 @@ class Assessment < ActiveRecord::Base
 
 
     attr_accessible :grade
-    accepts_nested_attributes_for :questions, :reject_if => lambda {|a| a[:content].blank? }, :allow_destroy => true
+    accepts_nested_attributes_for :questions, :allow_destroy => true #, :reject_if => lambda {|a| a[:content].blank? }
 
 
 

@@ -5,10 +5,6 @@ class CourseModule < ActiveRecord::Base
     has_many :assessments
     has_many :lectures
 
-<<<<<<< HEAD
-    attr_accessible :title
-=======
     accepts_nested_attributes_for :assessments, :reject_if => lambda { |a| a[:content].blank?}, :allow_destroy => true
 
->>>>>>> course_guide
 end

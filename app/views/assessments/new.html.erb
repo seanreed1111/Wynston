@@ -1,4 +1,12 @@
-<h1>Assessment for <%= @assessment.course_module_id %></h1>
+<h1>Assessment for 
+  <% if @assessment.course_module_id.nil? %>
+    "Current Module has no name."
+  <% else %>
+    <%= @assessment.course_module_id %>
+  <% end %>
+</h1>
+
+
 
 <%= render 'form' %>
 

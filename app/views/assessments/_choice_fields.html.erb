@@ -2,8 +2,8 @@
 <p class ="field">
 	<%= f.label :answer, "Choices" %>
 	<%= f.text_field :answer %>
-	<%= f.hidden_field :_destroy %>
-	<%= link_to_function "remove", "remove_fields(this)" %>
+ 	<%= f.check_box :_destroy %>
+ 	<%= f.label :_destroy, "Remove" %>
 </p>
 
 
