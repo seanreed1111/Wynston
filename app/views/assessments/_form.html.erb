@@ -3,11 +3,10 @@
   
   <%= f.fields_for :questions do |builder| %>
     <p class= "field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %><br/>
       <%= builder.label :question_text, "Question" %><br />
       <%= builder.text_area :question_text, :rows => 3 %><br />
-      <%= f.check_box :_destroy %>
-      <%= f.label :_destroy, "Remove" %>
-
       <%= f.fields_for :choices do |builder| %>
       <%= render 'choice_fields', :f => builder %>
 
@@ -22,3 +21,6 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+  
+   

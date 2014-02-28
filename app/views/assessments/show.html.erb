@@ -1,22 +1,9 @@
-<h1>Assessment for 
-  <% if @assessment.course_module_id.nil? %>
-    "Current Module has no name."
-  <% else %>
-    <%= @assessment.course_module_id %>
-  <% end %>
-</h1>
 
+<%= @assessment.name %>
 <ol>
-<% for question in @assessment.questions %>
-  <li>
-    <%=h question.content %>
-    <ul>
-    <% for choice in question.choices %>
-      <li><%=h choice.content %></li>
-    <% end %>
-    </ul>
-  </li>
-<% end %>
-</ol>
+<% @assessment.questions.each do |question|%>
+  <li><%= question.question_text %></li>
+  <% end %>
 
+</ol>
 
