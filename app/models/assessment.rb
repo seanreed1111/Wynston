@@ -7,7 +7,7 @@ class Assessment < ActiveRecord::Base
     # belongs_to :course_module
 
     accepts_nested_attributes_for :questions, :reject_if => lambda {|a| a[:question_text].blank? }, :allow_destroy => true
-    accepts_nested_attributes_for :choices, :reject_if => lambda {|a| a[:question_text].blank? }, :allow_destroy => true
+    # accepts_nested_attributes_for :choices, :reject_if => lambda {|a| a[:question_text].blank? }, :allow_destroy => true
 
 
 end

@@ -14,7 +14,7 @@ class AssessmentsController < ApplicationController
 		@assessment = Assessment.new
 		3.times do
 		assessments	= @assessment.questions.build
-			4.times{ assessments.choices.build}
+			4.times{ assessments.choices.build }
 		end 
 			# {@assessment.questions.build}
 	end

@@ -1,5 +1,5 @@
 
-<%= @assessment.name %>
+<h2><%= @assessment.name %></h2>
 <ol>
 <% @assessment.questions.each do |question|%>
   <li><%= question.question_text %></li>
