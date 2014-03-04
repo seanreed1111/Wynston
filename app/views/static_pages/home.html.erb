@@ -3,8 +3,15 @@
   <img src="#">
 	<h1>Wynston</h1>
 	<p>Online career and technical education, for free</p>
-	<button type="button" class="btn btn-default">Sign up</button>
-	 <button type="button" class="btn btn-default">View all courses</button>
+	<% if user_signed_in? %>
+	<% else %>
+		<a href="/users/sign_up">
+		<button type="button" class="btn btn-default">Sign up</button>
+		</a>
+	<% end %>
+	<a href="/courses">
+	<button type="button" class="btn btn-default">View all courses</button>
+	</a>
 </div>
 
 <h3>Featured courses</h3>

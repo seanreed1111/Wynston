@@ -23,7 +23,7 @@
       </p>
       <p class="picture_picture">
         <% if current_user.picture.nil? %>
-          <img src="<%= asset_path( 'no_pic.jpg' ) %>">
+          <img src=<%= asset_path( 'no_pic.jpg' ) %>>
         <% else %>
           <%= image_tag current_user.picture %>
 

@@ -33,7 +33,7 @@
         <% if current_user.picture.nil? %>
           <img src="<%= asset_path( 'no_pic.jpg' ) %>">
         <% else %>
-          <%= image_tag current_user.picture %>
+          <img src=<%= current_user.picture %>>
         <% end %>
       </p>
       <div class="field">
@@ -45,14 +45,12 @@
         <%= f.text_field :remote_picture_url %>
       </div>
         <p>
-          <strong>Gender:</strong>
           <div class="field">
             <%= f.label :gender %><br>
             <%= f.select :gender, ['', 'Female', 'Male'] %>
           </div>
         </p>
         <p>
-          <strong>Birthday:</strong>
           <%= current_user.birthday %>
         </p>
         <div class="field">
@@ -60,11 +58,10 @@
           <%= f.date_select :birthday ,:start_year => (@bdayToday.year - 114), :end_year => @bdayToday.year %>
         </div>
         <p>
-          <strong>Phone Number:</strong>
           <%= current_user.phone %>
         </p>
         <div class="field">
-          <%= f.label :phone %><br>
+          <%= f.label "Phone Number" %><br>
           <%= f.text_field :phone %>
         </div>
       </p>
@@ -100,7 +97,6 @@
 
 
     </div>
-
   </div>  
 </div>
 
