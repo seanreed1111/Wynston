@@ -46,12 +46,11 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 
-<div class="container">
+  <div class="container">
 
-</div>
+  <%= yield %>
 
-<%= yield %>
-
+  </div>
 
   <footer>
     <div id="main-nav" class="navbar navbar-default" role="navigation">
@@ -69,20 +68,5 @@
       </div>
      </div>
   </footer>
-
-  <script type="text/javascript">
-    $(function(){
-      $('.extend_menu').click()
-    })
-
-    $('.extend_menu').toggle(
-      function(){$(this).siblings().hide('fast')},
-      function(){$(this).siblings().show('fast')}
-    )
-
-    $('.extend_menu').css( 'cursor', 'pointer' );
-  </script>
-
-
 </body>
 </html>
