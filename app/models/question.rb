@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
 
     belongs_to :assessment
     has_many :choices
-    # has_many :answers
+    has_many :answers
 
     accepts_nested_attributes_for :choices,allow_destroy: true
 
