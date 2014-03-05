@@ -1,9 +1,20 @@
 
-<h2><%= @assessment.name %></h2>
-<ol>
-<% @assessment.questions.each do |question|%>
-  <li><%= question.question_text %></li>
-  <% end %>
 
+
+<ol>
+  <% for question in @assessment.questions %>
+  <li><%= h question.question_text %></li>
+  <ul>
+    <% for answer in question.choices %>
+      <li><%= h answer.answer %></li>
+    <% end %>
+  </ul>
+  <% end %>
 </ol>
+
+<p>
+  <%= link_to "Edit", edit_assessment_path(@assessment) %> |
+  <%= link_to "Destroy", @assessment, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", assessments_path %>
+</p>
 

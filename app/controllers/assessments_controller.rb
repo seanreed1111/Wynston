@@ -12,11 +12,10 @@ class AssessmentsController < ApplicationController
 
 	def new
 		@assessment = Assessment.new
-		3.times do
-		assessments	= @assessment.questions.build
-			4.times{ assessments.choices.build }
+		3.times do 
+			question = @assessment.questions.build
+			4.times { question.choices.build}
 		end 
-			# {@assessment.questions.build}
 	end
 
 	def create
@@ -32,10 +31,6 @@ class AssessmentsController < ApplicationController
 		    end
 	  end
 	end
-
-	# def video_path
-	# 	@videopath = @course.video.path.match(/\/system(.*)/)
-	# end
 
 
 	# def create
