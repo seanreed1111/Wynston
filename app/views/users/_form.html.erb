@@ -21,6 +21,11 @@
       <p>
         <h2><strong><%= current_user.first_name %></strong></h2>
       </p>
+
+      <div class="actions">
+        <%= f.submit "Update Profile" %>
+      </div>
+
       <div class="field">
         <%= f.label :first_name %><br>
         <%= f.text_field :first_name %>
@@ -100,10 +105,5 @@
   </div>  
 </div>
 
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
   <br><br>
 <% end %>
