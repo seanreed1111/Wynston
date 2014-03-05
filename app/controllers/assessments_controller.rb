@@ -12,9 +12,9 @@ class AssessmentsController < ApplicationController
 
 	def new
 		@assessment = Assessment.new
-		1.times do 
+		3.times do 
 			question = @assessment.questions.build
-			2.times { question.choices.build}
+			3.times { question.choices.build}
 		end 
 	end
 
