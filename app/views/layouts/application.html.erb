@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  
       <div class = "flash_msg">
         <h3><%flash.each do |key, value| %>
         <%= value %>
@@ -31,17 +33,15 @@
   <% end %>
   <%= link_to "Courses", courses_path, :class => 'navbar-link' %> 
   |
-  <%= link_to "About", static_pages_about_path, :class => 'navbar-link' %> |
   <%= link_to 'Profile', user_path(current_user), :class => 'navbar-link'  %> | 
-  <%= link_to 'Account Settings', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <%= link_to 'Account Settings', edit_user_registration_path, :class => 'navbar-link' %>|
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>  
 <% else %>
   <% if current_page?!(root_url) %>
     <%= link_to 'Home', root_url, :class => 'navbar-link'  %> |   
   <% end %>
   <%= link_to "Courses", courses_path, :class => 'navbar-link' %> 
   |
-  <%= link_to "About", static_pages_about_path, :class => 'navbar-link' %> |
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'%> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
@@ -51,6 +51,38 @@
 </div>
 
 <%= yield %>
+
+
+  <footer>
+    <div id="main-nav" class="navbar navbar-default" role="navigation">
+      <ul id="nav-lis" class="nav navbar-nav navbar-left">
+        <li><a href="/static_pages/about"><h5>About</h5></a></li>
+        <li><a href="#"><h5>Employers</h5></a></li>
+        <li><a href="#"><h5>Partners</h5></a></li>
+        <li><a href="/contact"><h5>Contact</h5></a></li>
+        <li><a href="#"><h5>Terms & Privacy</h5></a></li>
+        <li><a href="#"><h5>Blog</h5></a></li>
+        <li><a href="#"><h5>Help</h5></a></li>
+      </ul>
+      <div class="nav navbar-nav navbar-right">
+        <h5>2014 Wynston Labs, Inc.</h5>
+      </div>
+     </div>
+  </footer>
+
+  <script type="text/javascript">
+    $(function(){
+      $('.extend_menu').click()
+    })
+
+    $('.extend_menu').toggle(
+      function(){$(this).siblings().hide('fast')},
+      function(){$(this).siblings().show('fast')}
+    )
+
+    $('.extend_menu').css( 'cursor', 'pointer' );
+  </script>
+
 
 </body>
 </html>
