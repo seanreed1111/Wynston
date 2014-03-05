@@ -1,7 +1,9 @@
 class Course < ActiveRecord::Base
 	attr_accessible :title, :description, :intro_video, :syllabus, :language,
    :hours, :prerequisites, :start_date, :end_date, :image_url, :professor_id, 
-   :video, :about
+   :video, :about, :picture 
+   
+  mount_uploader :picture, PictureUploader
 	has_attached_file :video
 	belongs_to :professor
 	has_many :assessments, :dependent => :destroy 

@@ -1,7 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-<<<<<<< HEAD
+
 # course_list = [
 #   ["Intro to Travel, Tourism & Hospitality Management", "Introduction to the world of Travel and Tourism", "None"],
 #   ["Business Statistics I: MAT 120", "Statistical concepts that ever entrepreneur needs to know.", "Precalculus or MAT 200"],
@@ -54,7 +54,7 @@
 
 
 Sysadmin.create(first_name: "Sysadmin", email: "sysadmin@sysadmin.com", password: "12345678")
-=======
+
 course_list = [
   ["Intro to Travel, Tourism & Hospitality Management", "Introduction to the world of Travel and Tourism", "None"],
   ["Business Statistics I: MAT 120", "Statistical concepts that ever entrepreneur needs to know.", "Precalculus or MAT 200"],
@@ -107,7 +107,7 @@ Choice.create(answer: "Boise", correct: true)
 
 
 # Sysadmin.create(first_name: "Sysadmin", email: "sysadmin@sysadmin.com", password: "12345678")
->>>>>>> course_guide
+
 Student.create(first_name: "Student", email: "student@student.com", password: "12345678" )
 Professor.create(first_name: "Professor", email: "professor@professor.com", password:"12345678")
 

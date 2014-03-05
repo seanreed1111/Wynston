@@ -1,16 +1,21 @@
 %h1 
-  Yolo! Amine Rocks!
+  %p
+  %b
+  = "#{@course.title}"
+
+
+
+
+%p
+  %b
+  %img{height: "250", width: "300", src: "#{@course.picture}"} 
 
 %p
   %b 
   =  if !@course.video.path.nil?
     Video:
-    = @course.video.path.match(/\/system(.*)/) 
+    / = @course.video.path.match(/\/system(.*)/) 
     %video{controls: "",height: "250",width: "320", src: "#{@course.video.path.match(/\/system(.*)/)}"} 
-
-%p
-  %b
-  = "#{@course.title}"
 
 %p
   %b
@@ -24,7 +29,6 @@
   %b
   = "#{@course.hours}"
 
-
 %p
   %b
   = "#{@course.syllabus}"
@@ -33,3 +37,6 @@
 %p
   %b
   = "#{@course.prerequisites}"
+
+
+  <%= render 'register' %>

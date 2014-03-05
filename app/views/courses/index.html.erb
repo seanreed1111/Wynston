@@ -3,7 +3,10 @@
 	<p>Beta</p>
   <h1>Courses</h1>
 
+	<% if user_signed_in? && current_user.role == "professor" %>
+
   <h2><%= link_to 'New Course', new_course_path %></h2>
+  <%end%>
 
 </div>
 <div class="row">
@@ -20,6 +23,7 @@
 			<dl>
 				<dt><%= link_to course.title, course %></dt>
 		  	<dt><%= course.description %></dt>
+		  	<dt><%= course.image_url %></dt>
 		  </dl>
 		 </td>
 		</tr>
