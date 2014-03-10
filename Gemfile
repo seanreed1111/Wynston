@@ -30,9 +30,7 @@ end
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'debugger'
-
-  gem 'uglifier', '>= 1.0.3'
+gem 'uglifier', '>= 1.0.3'
 
 
 gem 'jquery-rails'
