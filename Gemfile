@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
-gem 'rails', '3.2.16'
-gem 'rails_12factor'
+gem 'rails', '~> 3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,11 +11,10 @@ gem 'haml'
 gem 'paperclip'
 gem 'cancan'
 gem 'omniauth'
-
+gem 'faker'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'debugger'
 end

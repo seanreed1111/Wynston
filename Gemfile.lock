@@ -162,7 +162,7 @@ GEM
       rack (>= 1.0)
 
 PLATFORMS
-  ruby (= 2.0.0)
+  ruby
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
@@ -179,7 +179,7 @@ DEPENDENCIES
   omniauth
   paperclip
   pg
-  rails (= 3.2.16)
+  rails (~> 3.2.16)
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
