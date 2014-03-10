@@ -162,7 +162,7 @@ GEM
       rack (>= 1.0)
 
 PLATFORMS
-  ruby
+  ruby (= 2.0.0)
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
