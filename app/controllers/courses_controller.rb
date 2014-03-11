@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
 		@course = Course.find(params[:id])
 	end 
 
+	def edit
+	@course = Course.find(params[:id])
+	end
+
   def create
   @course = Course.new(params[:course])
 
