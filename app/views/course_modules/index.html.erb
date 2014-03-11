@@ -1,0 +1,26 @@
+<h1>Listing course_modules</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @course_modules.each do |course_module| %>
+  <tr>
+
+    <% course_title = course_module.title %>
+    <td><%= link_to course_title, course_module %></td>
+      <td>Last updated <%= course_module.updated_at.month %>/<%= course_module.updated_at.day %>/<%= course_module.updated_at.year %></td>    
+      <td><%= link_to 'Edit', edit_course_module_path(course_module) %></td>
+      <td></td>
+      <td><%= link_to 'Delete', course_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Course module', new_course_module_path %>
