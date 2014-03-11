@@ -3,9 +3,8 @@
   %b
   = "#{@course.title}"
 
-/ %p
-/   %b
-/   = link_to 'Edit', edit_course_path(course)
+
+
 
 %p
   %b
@@ -18,9 +17,6 @@
     / = @course.video.path.match(/\/system(.*)/) 
     %video{controls: "",height: "250",width: "320", src: "#{@course.video.path.match(/\/system(.*)/)}"} 
 
-%p
-  %b
-  = link_to "Download", @course.video.url(:original, false)
 %p
   %b
   = "#{@course.description}"
@@ -43,3 +39,5 @@
   = "#{@course.prerequisites}"
 
 
+  <%= render 'register' %>
+  <%= link_to 'Back', users_path %>
