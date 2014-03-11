@@ -22,11 +22,9 @@
         <h2><strong><%= current_user.first_name %></strong></h2>
       </p>
       <p class="picture_picture">
-        <% if current_user.picture.nil? %>
-          <img src="<%= asset_path( 'no_pic.jpg' ) %>">
+        <% if current_user.picture == nil %>
         <% else %>
           <%= image_tag current_user.picture %>
-
         <% end %>
       </p>
     </div>

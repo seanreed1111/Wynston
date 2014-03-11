@@ -15,7 +15,7 @@ Wynston::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true #changed to true from false
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -66,5 +66,5 @@ Wynston::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   #RECONFIGURE MAILER BEFORE PUSHING TO PRODUCTION
-  config.action_mailer.default_url_options = { :host => INSERT_HOST_URL_HERE }
+  #   config.action_mailer.default_url_options = { :host => http://wynston-alpha.herokuapp.com }
 end

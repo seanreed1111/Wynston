@@ -1,45 +1,53 @@
-<!-- Update fields to reflect the wireframe -->
 <%= form_for (@course), :html => { :multipart => true }  do |f| %>
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :placeholder => "What is the title of your course?" %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :intro_video %><br />
+    <%= f.label :YouTube_intro_video %><br />
     <%= f.file_field :video %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :picture %><br>
+    <%= f.label :Image_or_Url %><br />
     <%= f.file_field :picture %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :image_url, "or image URL" %><br />
-    <%= f.text_field :image_url %>
+    <%= f.text_field :image_url, :placeholder => "include image URL" %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :syllabus %><br />
     <%= f.text_area :syllabus %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :prerequisites %><br />
     <%= f.text_area :prerequisites %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :language %><br />
     <%= f.text_field :language %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :hours %><br/>
     <%= f.text_field :hours %>
   </div>
-
-
-
+  <br>
+<!--   associates modules edits with a user -->
+  <div class="field">
+    <%= f.hidden_field :professor_id, :value => current_user.id %><br />
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :submit %>
   </div>
 <% end %>

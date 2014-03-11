@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-
-gem 'rails', '3.2.16'
+# ruby '2.1.0'
+gem 'rails', '~> 3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,11 +11,10 @@ gem 'haml'
 gem 'paperclip'
 gem 'cancan'
 gem 'omniauth'
-
+gem 'faker'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'debugger'
 end
@@ -30,9 +29,7 @@ end
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'debugger'
-
-  gem 'uglifier', '>= 1.0.3'
+gem 'uglifier', '>= 1.0.3'
 
 
 gem 'jquery-rails'
@@ -51,7 +48,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'unicorn'
 
   group :production do
-# Deploy with Capistrano
+    # Deploy with Capistrano
     gem 'capistrano'
     gem 'pg'
   end
