@@ -1,6 +1,6 @@
 Wynston::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users #uses cryptography for user login security 
   resources :courses
   resources :users
   get "static_pages/home"
