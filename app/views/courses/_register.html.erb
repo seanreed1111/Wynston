@@ -12,6 +12,23 @@
   <% end %>
 
 
+    t.integer  "student_id"
+    t.integer  "course_id"
+
+    <% @enrollment.each do |current| %>
+      <% if current_user.id == current.student_id %>
+        <% if  current.course_id == @course.course_id %>
+          You are currently registered for this course.
+        <% else %>
+        <div class="field">
+          <%= f.hidden_field :student_id, :value => current_user.id %>
+        </div><br />
+        <div class="field">
+          <%= f.hidden_field :course_id, :value => @course.course_id %>
+        </div><br />
+        <div class="actions">
+          <%= f.submit "Register for Course" %>
+        </div>
 
 
 
