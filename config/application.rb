@@ -67,10 +67,19 @@ module Wynston
       ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
     end
 
+    #sets up email for the contact form.  It makes reference to an application.yml file that is kept in the config folder.
+    #application.yml is not uploaded to github for security 
+=begin 
+    #if you want to create a new application.yml file the contents should be...
 
+WYNSTON_USERNAME: Email_address_here
+
+WYNSTON_PASSWORD: Email_password
+
+=end
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
+      :address              => "smtp.gmail.com",  #for our test we used Gmail, change this if you use another service 
       :port                 => 587,
       :domain               => "localhost:3000",
       :user_name            => ENV["WYNSTON_USERNAME"],

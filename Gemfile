@@ -6,11 +6,11 @@ gem 'rails', '~> 3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'devise' 
-gem 'haml'
-gem 'paperclip'
+gem 'devise' #for user log in 
+gem 'haml'  
+gem 'paperclip' #for video upload 
 gem 'cancan'
-gem 'omniauth'
+gem 'omniauth' #for security 
 gem 'faker'
 
 group :development, :test do
