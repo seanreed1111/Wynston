@@ -36,8 +36,10 @@ class CoursesController < ApplicationController
 		@course = Course.new
 	end
 
+private
+
 	def prevent_unauthorized_course_management
-		unless user_signed_in? && current_user.can_create_course?
+		unless user_signed_in? && current_user.can_manage_courses?
 			redirect_to courses_path
 		end
 	end

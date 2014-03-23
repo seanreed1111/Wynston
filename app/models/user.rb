@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
                     :location, :gender, :birthday, :education
 
 
-  def can_create_course?
+  def can_manage_courses?
     type.downcase == "professor" || type.downcase == "sysadmin"
   end
 
