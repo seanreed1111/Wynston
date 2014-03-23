@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController 
 	before_filter :prevent_unauthorized_course_management, only: [:edit, :create, :new]
 
-	def index 
+	def index
 		@courses = Course.all
 	end 
 
