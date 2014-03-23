@@ -39,9 +39,7 @@ class CoursesController < ApplicationController
 private
 
 	def prevent_unauthorized_course_management
-		unless user_signed_in? && current_user.can_manage_courses?
-			redirect_to courses_path
-		end
+		redirect_to courses_path unless can_manage_courses?
 	end
 
 end
