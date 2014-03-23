@@ -1,12 +1,9 @@
-
-
 <div class="page-header">
-	<strong><h3><p>Disclaimer: This website is in <i>Pre-Alpha</i> release version.</p></h3></strong>
+	<strong><h3>Disclaimer: This website is in <i>Pre-Alpha</i> release version.</h3></strong>
 	<%= image_tag "class.jpg" %>
 	<h1>Wynston</h1>
 	<p>Online career and technical education, for free</p>
-	<% if user_signed_in? %>
-	<% else %>
+	<% unless user_signed_in? %>
 		<a href="/users/sign_up">
 		<button type="button" class="btn btn-default">Sign up</button>
 		</a>

@@ -1,3 +1,2 @@
-class Sysadmin < User
-  
+class Sysadmin < User  
 end

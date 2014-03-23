@@ -1,46 +1,36 @@
 class AssessmentsController < ApplicationController
 
+  def index 
+    @assessments = Assessment.all
+  end 
 
-	def index 
-		@assessments = Assessment.all
-	end 
+  def show
+    @assessment = Assessment.find(params[:id])
+  end 
 
-	def show
-		@assessment = Assessment.find(params[:id])
+  def new
+    @assessment = Assessment.new
+    question = @assessment.questions.build
+    question.choices.build
+  end
 
-	end 
+  def create
+    @assessment = Assessment.new(params[:assessment])
 
-	def new
-		@assessment = Assessment.new
-			question = @assessment.questions.build
-			question.choices.build
-	end
+    respond_to do |format|
+      if @assessment.save
+        format.html { redirect_to @assessment, notice: 'Assessment was successfully created.' }
+        format.json { render json: @assessment, status: :created, location: @assessment }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @assessment.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-	def create
-  	@assessment = Assessment.new(params[:assessment])
-
-	  respond_to do |format|
-		    if @assessment.save
-		      format.html { redirect_to @assessment, notice: 'Assessment was successfully created.' }
-		      format.json { render json: @assessment, status: :created, location: @assessment }
-		    else
-		      format.html { render action: "new" }
-		      format.json { render json: @assessment.errors, status: :unprocessable_entity }
-		    end
-	  end
-	end
-
-
-	# def create
-		# debugger
-		# Choices.new(params[:questions][:choices])
-
-	# end
-
-	def edit
-		@assessment = Assessment.find(params[:id])
-	end 
-
+  def edit
+    @assessment = Assessment.find(params[:id])
+  end 
 
   def update
     @assessment = Assessment.find(params[:id])
