@@ -32,7 +32,6 @@ GEM
     atomic (1.1.15)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    cancan (1.6.10)
     capistrano (3.1.0)
       i18n
       rake (>= 10.0.0)
@@ -166,7 +165,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
-  cancan
   capistrano
   carrierwave
   coffee-rails (~> 3.2.1)

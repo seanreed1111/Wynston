@@ -9,7 +9,6 @@ gem 'rails', '~> 3.2.16'
 gem 'devise' 
 gem 'haml'
 gem 'paperclip'
-gem 'cancan'
 gem 'omniauth'
 gem 'faker'
 
