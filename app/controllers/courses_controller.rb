@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController 
+	before_filter :prevent_unauthorized_course_management, only: [:edit, :create, :new]
 
 	def index 
 		@courses = Course.all
@@ -9,20 +10,20 @@ class CoursesController < ApplicationController
 	end 
 
 	def edit
-	@course = Course.find(params[:id])
+		@course = Course.find(params[:id])
 	end
 
   def create
-  @course = Course.new(params[:course])
+  	@course = Course.new(params[:course])
 
 	  respond_to do |format|
-		    if @course.save
-		      format.html { redirect_to @course, notice: 'Course was successfully created.' }
-		      format.json { render json: @course, status: :created, location: @course }
-		    else
-		      format.html { render action: "new" }
-		      format.json { render json: @course.errors, status: :unprocessable_entity }
-		    end
+	    if @course.save
+	      format.html { redirect_to @course, notice: 'Course was successfully created.' }
+	      format.json { render json: @course, status: :created, location: @course }
+	    else
+	      format.html { render action: "new" }
+	      format.json { render json: @course.errors, status: :unprocessable_entity }
+	    end
 	  end
 	end
 
@@ -31,14 +32,14 @@ class CoursesController < ApplicationController
 	# end
 
 
-
 	def new 
 		@course = Course.new
+	end
 
-	end 
-
-	def edit
-		@course = Course.find(params[:id])
-	end 
+	def prevent_unauthorized_course_management
+		unless user_signed_in? && current_user.can_create_course?
+			redirect_to courses_path
+		end
+	end
 
 end
